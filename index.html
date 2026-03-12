@@ -54,6 +54,22 @@ border-radius:4px;
 cursor:pointer;
 }
 
+<div class="galeria">
+
+<a href="foto1.jpg" target="_blank">
+<img src="foto1.jpg">
+</a>
+
+<a href="foto2.jpg" target="_blank">
+<img src="foto2.jpg">
+</a>
+
+<a href="foto3.jpg" target="_blank">
+<img src="foto3.jpg">
+</a>
+
+</div>
+  
 /* visor emergente */
 
 .visor{
@@ -128,24 +144,25 @@ o administrativos de fines del siglo XIX.
 
 <!-- visor emergente -->
 
-<div id="visor" class="visor" onclick="cerrarImagen()">
-<img id="imagenGrande">
-</div>
+<!div id="visor" class="visor" onclick="cerrarImagen()">
+<!img id="imagenGrande">
+<!/div>
 
 <script>
 
-function abrirImagen(src){
-document.getElementById("imagenGrande").src = src;
-document.getElementById("visor").style.display = "flex";
-}
+!function abrirImagen(src){
+!document.getElementById("imagenGrande").src = src;
+!document.getElementById("visor").style.display = "flex";
+!}
 
-function cerrarImagen(){
-document.getElementById("visor").style.display = "none";
-}
+!function cerrarImagen(){
+!document.getElementById("visor").style.display = "none";
+!}
 
 </script>
 
 </body>
 </html>
+
 
 
