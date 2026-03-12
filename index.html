@@ -6,36 +6,8 @@
 
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
- <div id="visor" class="visor" onclick="cerrarImagen()">
-  <img id="imagenGrande">
-</div> 
-  
 <style>
 
-<div class="galeria">
-<img src="foto1.jpg" onclick="abrirImagen(this.src)">
-<img src="foto2.jpg" onclick="abrirImagen(this.src)">
-<img src="foto3.jpg" onclick="abrirImagen(this.src)">
-</div>
- 
-  .visor{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.85);
-justify-content:center;
-align-items:center;
-}
-
-.visor img{
-max-width:90%;
-max-height:90%;
-box-shadow:0 0 20px black;
-}
-  
 body{
 font-family: Arial, sans-serif;
 margin:40px;
@@ -79,25 +51,33 @@ gap:15px;
 .galeria img{
 width:200px;
 border-radius:4px;
+cursor:pointer;
+}
+
+/* visor emergente */
+
+.visor{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+}
+
+.visor img{
+max-width:90%;
+max-height:90%;
+box-shadow:0 0 20px black;
 }
 
 </style>
 
 </head>
 
-<script>
-
-function abrirImagen(src){
-document.getElementById("imagenGrande").src = src;
-document.getElementById("visor").style.display = "flex";
-}
-
-function cerrarImagen(){
-document.getElementById("visor").style.display = "none";
-}
-
-</script>
-  
 <body>
 
 <div class="contenedor">
@@ -130,10 +110,10 @@ style="width:100%; height:400px;">
 
 <div class="galeria">
 
-<img src="foto1.jpg" width="200" onclick="abrirImagen(this.src)">
-<img src="foto2.jpg" width="200" onclick="abrirImagen(this.src)">
-<img src="foto3.jpg" width="200" onclick="abrirImagen(this.src)">
-  
+<img src="foto1.jpg" onclick="abrirImagen(this.src)">
+<img src="foto2.jpg" onclick="abrirImagen(this.src)">
+<img src="foto3.jpg" onclick="abrirImagen(this.src)">
+
 </div>
 
 <h2>Descripción</h2>
@@ -146,8 +126,24 @@ o administrativos de fines del siglo XIX.
 
 </div>
 
+<!-- visor emergente -->
+
+<div id="visor" class="visor" onclick="cerrarImagen()">
+<img id="imagenGrande">
+</div>
+
+<script>
+
+function abrirImagen(src){
+document.getElementById("imagenGrande").src = src;
+document.getElementById("visor").style.display = "flex";
+}
+
+function cerrarImagen(){
+document.getElementById("visor").style.display = "none";
+}
+
+</script>
+
 </body>
 </html>
-
-
-
